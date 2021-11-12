@@ -3,7 +3,6 @@ let Menu = (() => {
     let content;
     let menuContainer;
     let menu;
-    let toggleHideElements = false;
 
     let init = () => {
 
@@ -12,7 +11,7 @@ let Menu = (() => {
         menuContainer = document.createElement('div');
         menuContainer.classList.add('menu-container');
 
-        menu = document.createElement('menu');
+        menu = document.createElement('div');
         menu.classList.add('menu');
 
     }
@@ -26,6 +25,7 @@ let Menu = (() => {
 
         let image = document.createElement('img');
         image.setAttribute("src", link);
+        image.setAttribute("alt", "image");
 
         let container = document.createElement('div')
         let h4 = document.createElement('h4');
@@ -40,25 +40,20 @@ let Menu = (() => {
         menuContainer.appendChild(card);
     }
 
-    let toggleVisibility = () => {
-
-        toggleHideElements = !toggleHideElements;
-
-        if(toggleHideElements) {
-            menu.style.display = "none";
-        } else {
-            menu.style.display = "flex";
-        }
-    }
-
     let renderPage = () => {
+        init();
         createCard("Big Cheese", "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2021%2F07%2F13%2FUltimate-Veggie-Burgers-FT-Recipe-0821.jpg&q=85");
         createCard("Big Meat", "https://www.jessicagavin.com/wp-content/uploads/2020/05/grilled-burgers-34-1200.jpg");
         createCard("Big Fat", "https://www.bigbelly-cluj.ro/filehandler/ProductFirstFile/0x0/cheese-max-burger-en-390.jpg?v=637610767161548308");
         menu.appendChild(menuContainer);
+        content.appendChild(menu);
     }
 
-    return {renderPage, toggleVisibility};
+    let deleteContents = () => {
+        content.removeChild(main);
+    }
+
+    return {renderPage, deleteContents};
 
 })();
 

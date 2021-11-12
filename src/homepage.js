@@ -1,10 +1,19 @@
 let HomePage = (() => {
 
-    let content = document.getElementById('content');
-    let header = document.createElement('div');
-    let main = document.createElement('div');
+    let content;
+    let header;
+    let main;
 
-    let toggleHideElements = false;
+
+    let init = () => {
+
+        content = document.getElementById('content');
+        header = document.createElement('div');
+        main = document.createElement('div');
+
+    }
+
+    init();
 
     let renderHeader = () => {
 
@@ -52,23 +61,16 @@ let HomePage = (() => {
         
     }
 
-    let toggleVisibility = () => {
-
-        toggleHideElements = !toggleHideElements;
-
-        if(toggleHideElements) {
-            main.style.display = "none";
-        } else {
-            main.style.display = "flex";
-        }
-    }
-
     let renderPage = () => {
         renderHeader();
         renderBody();
     }
 
-    return {renderPage, toggleVisibility};
+    let deleteContents = () => {
+        content.removeChild(main);
+    }
+
+    return {renderPage, deleteContents};
 
 })();
 
