@@ -63,3 +63,41 @@ img {
     padding:30px;
     margin:15px;
 }
+.menu {
+    height: 100%;
+    background-color: rgb(201, 201, 201);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 400px;
+    background-color: #f0f0f0e6;
+}
+  
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+.container {
+    padding: 50px 50px;
+}
+
+.card img {
+    width:100%;
+    height: 300px;
+}
+
+h4 {
+    text-align: center;
+    font-size: 25px;
+    color:#EC0F00;
+}
+
+.menu-container {
+    display: flex;
+    flex-flow:wrap;
+    gap:40px;
+}
