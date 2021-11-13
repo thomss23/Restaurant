@@ -4,17 +4,6 @@ let HomePage = (() => {
     let header;
     let main;
 
-
-    let init = () => {
-
-        content = document.getElementById('content');
-        header = document.createElement('div');
-        main = document.createElement('div');
-
-    }
-
-    init();
-
     let renderHeader = () => {
 
         let firstLink = document.createElement('div');
@@ -32,8 +21,18 @@ let HomePage = (() => {
         content.appendChild(header);
     }
 
+    let init = () => {
+        content = document.getElementById('content');
+        header = document.createElement('div');
+        renderHeader();
+    }
+
+    init();
+
     let renderBody = () => {
 
+        main = document.createElement('div');
+        
         let centerContainer = document.createElement('div');
 
         let firstDescription = document.createElement('div');
@@ -62,7 +61,6 @@ let HomePage = (() => {
     }
 
     let renderPage = () => {
-        renderHeader();
         renderBody();
     }
 
