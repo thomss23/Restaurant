@@ -7,14 +7,9 @@ let Menu = (() => {
     let init = () => {
 
         content = document.getElementById('content');
-
         menuContainer = document.createElement('div');
         menuContainer.classList.add('menu-container');
-
-
     }
-
-    init();
 
     let createCard = (title, link) =>  {
 
@@ -39,23 +34,21 @@ let Menu = (() => {
     }
 
     let renderPage = () => {
+
+        init();
+
         menu = document.createElement('div');
         menu.classList.add('menu');
 
-        createCard("Big Cheese", "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2021%2F07%2F13%2FUltimate-Veggie-Burgers-FT-Recipe-0821.jpg&q=85");
-        createCard("Big Meat", "https://www.jessicagavin.com/wp-content/uploads/2020/05/grilled-burgers-34-1200.jpg");
-        createCard("Big Fat", "https://www.bigbelly-cluj.ro/filehandler/ProductFirstFile/0x0/cheese-max-burger-en-390.jpg?v=637610767161548308");
+        createCard("Big Cheese", "../src/assets/hamburger1.svg");
+        createCard("Big Meat", "../src/assets/hamburger2.svg");
+        createCard("Big Sandwich", "../src/assets/sandwich.svg");
 
         menu.appendChild(menuContainer);
         content.appendChild(menu);
     }
 
-    let deleteContents = () => {
-        content.removeChild(menu);
-        menuContainer.innerHTML = '';
-    }
-
-    return {renderPage, deleteContents};
+    return {renderPage};
 
 })();
 

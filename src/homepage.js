@@ -8,6 +8,7 @@ let HomePage = (() => {
 
         let firstLink = document.createElement('div');
         let secondLink = document.createElement('div');
+        let thirdLink = document.createElement('div');
 
         header.classList.add('header');
         firstLink.classList.add('link');
@@ -15,8 +16,12 @@ let HomePage = (() => {
         secondLink.classList.add('link');
         secondLink.textContent = 'Menu';
 
+        thirdLink.classList.add('link');
+        thirdLink.textContent = 'Contact';
+
         header.appendChild(firstLink);
         header.appendChild(secondLink);
+        header.appendChild(thirdLink);
 
         content.appendChild(header);
     }
@@ -29,8 +34,8 @@ let HomePage = (() => {
 
     init();
 
-    let renderBody = () => {
-
+    let renderPage = () => {
+        
         main = document.createElement('div');
         
         let centerContainer = document.createElement('div');
@@ -57,18 +62,9 @@ let HomePage = (() => {
         main.appendChild(centerContainer);
 
         content.appendChild(main);
-        
     }
 
-    let renderPage = () => {
-        renderBody();
-    }
-
-    let deleteContents = () => {
-        content.removeChild(main);
-    }
-
-    return {renderPage, deleteContents};
+    return {renderPage};
 
 })();
 
